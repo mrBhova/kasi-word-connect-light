@@ -136,9 +136,9 @@ public  class MeshShader extends Group implements Disposable {
         super.draw(batch, parentAlpha);
 
         if(isVisible()) {
-            ShaderProgram sp = batch.getShader();
+            batch.end();
             renderMesh(getX(), getY(), getWidth(), getHeight());
-            batch.setShader(sp);
+            batch.begin();
         }
     }
 

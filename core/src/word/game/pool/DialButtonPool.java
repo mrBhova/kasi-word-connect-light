@@ -10,7 +10,7 @@ import word.game.ui.dial.DialButton;
 public class DialButtonPool extends Pool<DialButton> {
 
     public DialButtonPool(){
-            super(5, Constants.MAX_LETTERS, true);
+            super(5, Constants.MAX_LETTERS);
     }
 
 

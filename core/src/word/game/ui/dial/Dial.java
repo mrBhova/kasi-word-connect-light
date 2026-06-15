@@ -15,7 +15,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.Disposable;
-import com.badlogic.gdx.utils.StringBuilder;
+import java.lang.StringBuilder;
 
 import word.game.actions.CurveActionIn;
 import word.game.config.ConfigProcessor;
@@ -265,7 +265,7 @@ public class Dial extends Group implements Disposable {
 
     private String selectedButtonsToString(){
         if(stringBuilder == null) stringBuilder = new StringBuilder(Constants.MAX_LETTERS);
-        else stringBuilder.clear();
+        else stringBuilder.setLength(0);
 
         for (int i = 0; i < selectedButtons.size; i++)
             stringBuilder.append(selectedButtons.get(i).getChar());

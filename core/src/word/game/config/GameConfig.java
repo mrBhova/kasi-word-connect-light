@@ -37,7 +37,7 @@ public class GameConfig {
     public static final boolean DEBUG_RATE_US                                    = false;
 
     //To see the correct answers of levels on logcat output. Filter it using "game.log"
-    public static final boolean DEBUG_LEVEL_ANSWERS                              = true;
+    public static final boolean DEBUG_LEVEL_ANSWERS                              = false;
 
     //Bonus words win dialog opens as if you won a reward when you click the bonus words button (button with a star on)
     public static final boolean DEBUG_BONUS_WORDS_WIN_DIALOG                     = false;
@@ -74,7 +74,7 @@ public class GameConfig {
      * Players can use reveal hints when they enough coins.
      * It is set to 0 here because they have a lot of change to win coins.
      */
-    public static final int DEFAULT_COIN_COUNT                                  = 0;
+    public static final int DEFAULT_COIN_COUNT                                  = 300;
 
 
 
@@ -83,14 +83,14 @@ public class GameConfig {
      * 1 of them will be used for tutorial and it is a good idea to have
      * one after the tutorial
      */
-    public static final int DEFAULT_SINGLE_RANDOM_REVEAL_COUNT                  = 2;
-    public static final int DEFAULT_FINGER_REVEAL_COUNT                         = 2;
-    public static final int DEFAULT_MULTI_RANDOM_REVEAL_COUNT                   = 2;
-    public static final int DEFAULT_ROCKET_REVEAL_COUNT                         = 2;
+    public static final int DEFAULT_SINGLE_RANDOM_REVEAL_COUNT                  = 5;
+    public static final int DEFAULT_FINGER_REVEAL_COUNT                         = 5;
+    public static final int DEFAULT_MULTI_RANDOM_REVEAL_COUNT                   = 3;
+    public static final int DEFAULT_ROCKET_REVEAL_COUNT                         = 3;
 
     //When the player finds words that don't exist on board, he/she earns some reward
     public static final int NUMBER_OF_BONUS_WORDS_TO_FIND_FOR_REWARD            = 50;
-    public static final int NUMBER_OF_COINS_AWARDED_FOR_BONUS_WORDS_REWARD      = 20;
+    public static final int NUMBER_OF_COINS_AWARDED_FOR_BONUS_WORDS_REWARD      = 60;
 
 
 
@@ -102,7 +102,7 @@ public class GameConfig {
     public static final int COIN_COST_OF_USING_SINGLE_RANDOM_REVEAL             = 100;
     public static final int COIN_COST_OF_USING_MULTI_RANDOM_REVEAL              = 300;
     public static final int COIN_COST_OF_USING_FINGER_REVEAL                    = 200;
-    public static final int COIN_COST_OF_USING_ROCKET_REVEAL                    = 200;
+    public static final int COIN_COST_OF_USING_ROCKET_REVEAL                    = 250;
 
 
     //Gold coins on game board (appears after using a rocket reveal hint and after killing the monster)
@@ -182,12 +182,12 @@ public class GameConfig {
             return false;
         }
 
-        if(levelIndex < 50) {
+        if(levelIndex < 70) {
             if(levelIndex % 2 == 0) return true;
             return false;
         }
 
-        if(levelIndex > 50) return true;
+        if(levelIndex > 100) return true;
 
         return false;
     }
@@ -200,7 +200,7 @@ public class GameConfig {
      * Remove Ads. However, it may be distracting to see such an offering
      * too often. It is up to you to use it or not.
      */
-    public static final boolean SHOW_REMOVE_ADS_DIALOG_AFTER_INTERSTITIAL   = true;
+    public static final boolean SHOW_REMOVE_ADS_DIALOG_AFTER_INTERSTITIAL   = false;
 
 
 
@@ -262,7 +262,7 @@ public class GameConfig {
      * if rewarded video for spinning is enabled.
      * Make it 0 to completely disable luck wheel.
      */
-    public static final int ALLOWED_SPIN_COUNT                           = 3;
+    public static final int ALLOWED_SPIN_COUNT                           = 4;
 
 
 
@@ -379,7 +379,7 @@ public class GameConfig {
      */
     public static final boolean SHOW_RATE_DIALOG        = true;
     public static final int DAYS_TO_ELAPSE_BEFORE_RATE  = 3;
-    public static final int APP_LAUNCHES_BEFORE_RATE    = 5;
+    public static final int APP_LAUNCHES_BEFORE_RATE    = 10;
 
 
 

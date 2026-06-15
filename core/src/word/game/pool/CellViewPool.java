@@ -8,7 +8,7 @@ import word.game.ui.board.CellView;
 public class CellViewPool extends Pool<CellView> {
 
     public CellViewPool(){
-        super(9, 50, true);
+        super(9, 50);
     }
 
 

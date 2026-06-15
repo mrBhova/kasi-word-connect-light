@@ -8,7 +8,7 @@ public class CellViewParticlePool extends Pool<CellViewParticle> {
 
 
     public CellViewParticlePool(){
-        super(24, 64, true);
+        super(24, 64);
     }
 
 

@@ -1,6 +1,7 @@
 android {
-    buildToolsVersion "31.0.0"
-    compileSdkVersion 31
+    namespace "word.game"
+    buildToolsVersion "36.0.0"
+    compileSdk 36
     sourceSets {
         main {
             manifest.srcFile 'AndroidManifest.xml'
@@ -11,17 +12,18 @@ android {
             assets.srcDirs = ['assets']
             jniLibs.srcDirs = ['libs']
         }
-
     }
     packagingOptions {
-        exclude 'META-INF/robovm/ios/robovm.xml'
+        resources {
+            excludes += ['META-INF/robovm/ios/robovm.xml']
+        }
     }
     defaultConfig {
-        applicationId "net.codecanyon.yourcodecanyonusername.android.worderful"
-        minSdkVersion 16
-        targetSdkVersion 31
-        versionCode 1
-        versionName "1.0.0"
+        applicationId "net.singomedia.bovagames.mzansiwordconnect"
+        minSdkVersion 21
+        targetSdk 36
+        versionCode 13
+        versionName "1.1.2"
         multiDexEnabled true
     }
     buildTypes {
@@ -48,7 +50,6 @@ task copyAndroidNatives {
             def outputDir = null
             if (jar.name.endsWith("natives-arm64-v8a.jar")) outputDir = file("libs/arm64-v8a")
             if (jar.name.endsWith("natives-armeabi-v7a.jar")) outputDir = file("libs/armeabi-v7a")
-            if(jar.name.endsWith("natives-armeabi.jar")) outputDir = file("libs/armeabi")
             if(jar.name.endsWith("natives-x86_64.jar")) outputDir = file("libs/x86_64")
             if(jar.name.endsWith("natives-x86.jar")) outputDir = file("libs/x86")
             if(outputDir != null) {
@@ -91,8 +92,3 @@ task run(type: Exec) {
 }
 
 eclipse.project.name = appName + "-android"
-
-
-apply plugin: 'com.android.application'
-apply plugin: 'com.google.gms.google-services'
-

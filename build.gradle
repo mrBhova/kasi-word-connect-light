@@ -1,19 +1,14 @@
 buildscript {
-    
-
     repositories {
         mavenLocal()
         mavenCentral()
         maven { url "https://plugins.gradle.org/m2/" }
         maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
-        jcenter()
         google()
     }
     dependencies {
-        classpath 'org.wisepersist:gwt-gradle-plugin:1.0.13'
-        classpath 'com.android.tools.build:gradle:7.0.3'
-        classpath 'com.google.gms:google-services:4.3.10'
-
+        classpath 'com.android.tools.build:gradle:8.9.1'
+        classpath 'com.google.gms:google-services:4.4.2'
     }
 }
 
@@ -22,8 +17,8 @@ allprojects {
 
     version = '1.0'
     ext {
-        appName = "Word Connect"
-        gdxVersion = '1.9.11'
+        appName = "Mzansi Word Connect"
+        gdxVersion = '1.14.2'
         roboVMVersion = '2.3.10-SNAPSHOT'
         box2DLightsVersion = '1.4'
         ashleyVersion = '1.7.0'
@@ -33,7 +28,6 @@ allprojects {
     repositories {
         mavenLocal()
         mavenCentral()
-        jcenter()
         google()
         maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
         maven { url "https://oss.sonatype.org/content/repositories/releases/" }
@@ -49,37 +43,37 @@ project(":desktop") {
         api "com.badlogicgames.gdx:gdx-backend-lwjgl:$gdxVersion"
         api "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-desktop"
         api "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-desktop"
-        implementation 'org.jsoup:jsoup:1.13.1'
+        implementation 'org.jsoup:jsoup:1.18.1'
         
     }
 }
 
 project(":android") {
-    apply plugin: "android"
+    apply plugin: "com.android.application"
+    apply plugin: 'com.google.gms.google-services'
 
     configurations { natives }
 
     dependencies {
         implementation project(":core")
         api "com.badlogicgames.gdx:gdx-backend-android:$gdxVersion"
-        natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-armeabi"
         natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-armeabi-v7a"
         natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-arm64-v8a"
         natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-x86"
         natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-x86_64"
         api "com.badlogicgames.gdx:gdx-box2d:$gdxVersion"
-        natives "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-armeabi"
         natives "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-armeabi-v7a"
         natives "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-arm64-v8a"
         natives "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-x86"
         natives "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-x86_64"
-        implementation 'org.jsoup:jsoup:1.13.1'
-        implementation "com.google.android.gms:play-services-ads:20.5.0"
-        implementation 'com.google.android.ump:user-messaging-platform:2.0.0'
-        implementation 'com.android.billingclient:billing:4.0.0'
-        implementation platform('com.google.firebase:firebase-bom:25.11.0')
+        implementation 'org.jsoup:jsoup:1.18.1'
+        implementation 'com.google.android.gms:play-services-ads:23.6.0'
+        implementation 'com.google.android.ump:user-messaging-platform:3.1.0'
+        implementation 'com.android.billingclient:billing:7.1.1'
+        implementation platform('com.google.firebase:firebase-bom:33.5.1')
+        implementation 'com.google.firebase:firebase-analytics'
         implementation 'com.google.firebase:firebase-messaging'
-        implementation 'com.android.support:multidex:1.0.3'
+        implementation 'androidx.multidex:multidex:2.0.1'
     }
 }
 

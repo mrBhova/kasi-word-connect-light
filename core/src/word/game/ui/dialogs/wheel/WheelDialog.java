@@ -147,7 +147,7 @@ public class WheelDialog extends BaseDialog {
                 videoIcon = new Image(AtlasRegions.ic_video);
                 videoIcon.setScale(UIConfig.WHEEL_DIALOG_SPIN_BUTTON_FONT_SCALE);
                 videoIcon.setX(spinButton.getWidth() * 0.1f);
-                videoIcon.setY((spinButton.getHeight() - videoIcon.getHeight()) * 0.5f);
+                videoIcon.setY((spinButton.getHeight() - videoIcon.getHeight()) * 0.6f);
                 spinButton.addActor(videoIcon);
             }
             spinButton.setText(" " + LanguageManager.format("spin_again", actualSpinCount));

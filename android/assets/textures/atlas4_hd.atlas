@@ -1,8 +1,8 @@
 
 atlas4_hd.png
-size: 1024,512
+size: 1024, 512
 format: RGBA8888
-filter: Linear,Linear
+filter: Linear, Linear
 repeat: none
 coins1
   rotate: false

@@ -1,180 +1,180 @@
 
 atlas3_sd.png
-size: 2048,256
+size: 2048, 256
 format: RGBA8888
-filter: Linear,Linear
+filter: Linear, Linear
 repeat: none
 bomb
   rotate: false
-  xy: 1675, 189
-  size: 47, 65
-  orig: 47, 65
+  xy: 1786, 188
+  size: 48, 66
+  orig: 48, 66
   offset: 0, 0
   index: -1
 bomb_fire
   rotate: false
-  xy: 1409, 177
+  xy: 810, 101
   size: 15, 15
   orig: 15, 15
   offset: 0, 0
   index: -1
 bonus_bar_bg
   rotate: false
-  xy: 252, 230
+  xy: 252, 204
   size: 225, 24
   orig: 225, 24
   offset: 0, 0
   index: -1
 bonus_words_bar_track
   rotate: false
-  xy: 252, 204
+  xy: 252, 230
   size: 225, 24
   orig: 225, 24
   offset: 0, 0
   index: -1
 coin_rotate
   rotate: false
-  xy: 1779, 204
+  xy: 1734, 204
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
   index: 1
 coin_rotate
   rotate: false
-  xy: 527, 102
+  xy: 1836, 204
   size: 44, 50
   orig: 44, 50
   offset: 0, 0
   index: 6
 coin_rotate
   rotate: false
-  xy: 573, 102
+  xy: 1882, 204
   size: 44, 50
   orig: 44, 50
   offset: 0, 0
   index: 2
 coin_rotate
   rotate: false
-  xy: 1347, 149
+  xy: 758, 101
   size: 24, 51
   orig: 24, 51
   offset: 0, 0
   index: 3
 coin_rotate
   rotate: false
-  xy: 1373, 141
+  xy: 784, 101
   size: 24, 51
   orig: 24, 51
   offset: 0, 0
   index: 5
 coin_rotate
   rotate: false
-  xy: 1399, 142
+  xy: 450, 50
   size: 8, 50
   orig: 8, 50
   offset: 0, 0
   index: 4
 combo
   rotate: false
-  xy: 252, 35
+  xy: 1295, 189
   size: 68, 65
   orig: 68, 65
   offset: 0, 0
   index: 14
 combo
   rotate: false
-  xy: 322, 38
+  xy: 1365, 192
   size: 64, 62
   orig: 64, 62
   offset: 0, 0
   index: 12
 combo
   rotate: false
-  xy: 388, 40
-  size: 64, 60
-  orig: 64, 60
-  offset: 0, 0
-  index: 13
-combo
-  rotate: false
-  xy: 1375, 194
-  size: 64, 60
-  orig: 64, 60
-  offset: 0, 0
-  index: 10
-combo
-  rotate: false
-  xy: 1441, 194
+  xy: 332, 40
   size: 64, 60
   orig: 64, 60
   offset: 0, 0
   index: 11
 combo
   rotate: false
-  xy: 1507, 198
+  xy: 1431, 194
+  size: 64, 60
+  orig: 64, 60
+  offset: 0, 0
+  index: 13
+combo
+  rotate: false
+  xy: 1497, 194
+  size: 64, 60
+  orig: 64, 60
+  offset: 0, 0
+  index: 10
+combo
+  rotate: false
+  xy: 1563, 198
   size: 58, 56
   orig: 58, 56
   offset: 0, 0
   index: 9
 combo
   rotate: false
-  xy: 1724, 204
+  xy: 1679, 204
   size: 53, 50
   orig: 53, 50
   offset: 0, 0
   index: 8
 combo
   rotate: false
-  xy: 478, 107
+  xy: 634, 107
   size: 47, 45
   orig: 47, 45
   offset: 0, 0
   index: 7
 combo
   rotate: false
-  xy: 619, 113
+  xy: 683, 113
   size: 41, 39
   orig: 41, 39
   offset: 0, 0
   index: 6
 combo
   rotate: false
-  xy: 322, 2
+  xy: 810, 118
   size: 35, 34
   orig: 35, 34
   offset: 0, 0
   index: 5
 combo
   rotate: false
-  xy: 662, 124
+  xy: 1295, 159
   size: 30, 28
   orig: 30, 28
   offset: 0, 0
   index: 4
 combo
   rotate: false
-  xy: 359, 13
+  xy: 847, 129
   size: 24, 23
   orig: 24, 23
   offset: 0, 0
   index: 3
 combo
   rotate: false
-  xy: 694, 134
+  xy: 1327, 169
   size: 18, 18
   orig: 18, 18
   offset: 0, 0
   index: 2
 combo
   rotate: false
-  xy: 1724, 190
+  xy: 252, 2
   size: 13, 12
   orig: 13, 12
   offset: 0, 0
   index: 1
 combo
   rotate: false
-  xy: 2039, 247
+  xy: 1836, 195
   size: 7, 7
   orig: 7, 7
   offset: 0, 0
@@ -192,14 +192,14 @@ explosion
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
-  index: 10
+  index: 3
 explosion
   rotate: false
   xy: 354, 102
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
-  index: 3
+  index: 8
 explosion
   rotate: false
   xy: 479, 154
@@ -213,49 +213,49 @@ explosion
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
-  index: 7
+  index: 2
 explosion
   rotate: false
   xy: 683, 154
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
-  index: 4
+  index: 7
 explosion
   rotate: false
   xy: 785, 154
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
-  index: 9
+  index: 10
 explosion
   rotate: false
   xy: 887, 154
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
-  index: 1
+  index: 4
 explosion
   rotate: false
   xy: 989, 154
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
-  index: 6
+  index: 9
 explosion
   rotate: false
   xy: 1091, 154
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
-  index: 8
+  index: 1
 explosion
   rotate: false
   xy: 1193, 154
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
-  index: 2
+  index: 6
 gift_ray
   rotate: false
   xy: 456, 114
@@ -265,63 +265,70 @@ gift_ray
   index: -1
 got_hit
   rotate: false
-  xy: 1831, 208
-  size: 50, 46
-  orig: 50, 46
+  xy: 478, 109
+  size: 50, 43
+  orig: 50, 43
   offset: 0, 0
   index: -1
 idle
   rotate: false
-  xy: 1935, 211
-  size: 50, 43
-  orig: 50, 43
-  offset: 0, 0
-  index: 2
-idle
-  rotate: false
-  xy: 1987, 211
+  xy: 1928, 211
   size: 50, 43
   orig: 50, 43
   offset: 0, 0
   index: 1
+idle
+  rotate: false
+  xy: 582, 109
+  size: 50, 43
+  orig: 50, 43
+  offset: 0, 0
+  index: 2
 jump_fall
   rotate: false
-  xy: 1883, 208
-  size: 50, 46
-  orig: 50, 46
+  xy: 530, 109
+  size: 50, 43
+  orig: 50, 43
   offset: 0, 0
   index: -1
 jump_up
   rotate: false
-  xy: 1295, 154
-  size: 50, 46
-  orig: 50, 46
+  xy: 1980, 211
+  size: 50, 43
+  orig: 50, 43
+  offset: 0, 0
+  index: -1
+multi_random_hint_big
+  rotate: false
+  xy: 726, 99
+  size: 30, 53
+  orig: 30, 53
   offset: 0, 0
   index: -1
 rewarded_video_glow
   rotate: false
-  xy: 1567, 200
+  xy: 1623, 200
   size: 54, 54
   orig: 54, 54
   offset: 0, 0
   index: -1
 rocket
   rotate: false
-  xy: 252, 12
+  xy: 252, 16
   size: 34, 21
   orig: 34, 21
   offset: 0, 0
   index: -1
 ufo
   rotate: false
-  xy: 1295, 202
-  size: 78, 52
-  orig: 78, 52
+  xy: 252, 39
+  size: 78, 61
+  orig: 78, 61
   offset: 0, 0
   index: -1
 ufo_thrust
   rotate: false
-  xy: 1623, 179
+  xy: 398, 25
   size: 50, 75
   orig: 50, 75
   offset: 0, 0

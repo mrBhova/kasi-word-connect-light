@@ -3,6 +3,8 @@ package word.game.config;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 
+import java.util.Random;
+
 import word.game.WordConnectGame;
 import word.game.managers.LanguageManager;
 import word.game.managers.ResourceManager;
@@ -40,7 +42,7 @@ public class UIConfig {
     /**
      * Preloader
      */
-    public static final Color LOADING_BAR_COLOR = new Color(0x65ab29ff);
+    public static final Color LOADING_BAR_COLOR = new Color(0xDD0000FF);
 
 /**************************************************************************************************************************************************************************/
 
@@ -123,38 +125,42 @@ public class UIConfig {
      * @return It returns the path to the background image in the assets folder
      */
     public static String getGameScreenBackgroundImage(int levelIndex){
-        int total = 10;
-        int num = levelIndex / total;
-        num %= total;
+        //   int total = 100;
+        //   int num = levelIndex / total;
+        //    num %= total;
 
-        return "background/game/game_" + num + ".jpg";
+
+        Random rand = new Random(); //instance of random class
+        int upperbound = 56;
+        int int_random = rand.nextInt(upperbound);
+
+        return "background/game/game_" + int_random + ".jpg";
     }
 
-
-/**************************************************************************************************************************************************************************/
+    /**************************************************************************************************************************************************************************/
     //Tutorials that pop-up on the first game play
     public static final boolean INTERACTIVE_TUTORIAL_ENABLED                    = true;
-    public static final Color INTERACTIVE_TUTORIAL_TEXT_BG_COLOR                = new Color(0x9c9777ff);
-    //Be careful, color format is different here
+    public static final Color INTERACTIVE_TUTORIAL_TEXT_BG_COLOR                = new Color(0x00192Dff);
+    //Be car+6++eful, color format is different here
     public static final String INTERACTIVE_TUTORIAL_TEXT_COLOR                  = "[#ffffff]";
     public static final boolean INTERACTIVE_TUTORIAL_TEXT_USE_SHADOW_FONT       = true;
     //For eg, Color of B-I-R-D as in "Drag your finger to spell B-I-R-D"
     public static final String INTERACTIVE_TUTORIAL_DASHED_DIAL_WORD_COLOR      = "[#ffff00]";
-    public static final Color INTERACTIVE_TUTORIAL_GOT_IT_BACKGROUND_COLOR      = new Color(0xc451b8ff);
+    public static final Color INTERACTIVE_TUTORIAL_GOT_IT_BACKGROUND_COLOR      = new Color(0xA50000ff);
     public static final Color INTERACTIVE_TUTORIAL_GOT_IT_TEXT_COLOR            = Color.WHITE;
     public static final boolean INTERACTIVE_TUTORIAL_GOT_IT_USE_SHADOW_FONT     = false;
 
-/**************************************************************************************************************************************************************************/
+    /**************************************************************************************************************************************************************************/
     //For top panel
     public static final Color REMAINING_COINS_TEXT_COLOR            = Color.WHITE;
-    public static final boolean REMAINING_COINS_USE_SHADOW_FONT     = false;
-    public static final Color LEVEL_NUMBER_TEXT_COLOR               = Color.WHITE;
+    public static final boolean REMAINING_COINS_USE_SHADOW_FONT     = true;
+    public static final Color LEVEL_NUMBER_TEXT_COLOR               = new Color(0xFFE28Dff);
     public static final boolean LEVEL_NUMBER_TEXT_USE_SHADOW_FONT   = true;
-    public static final Color COMBO_REWARD_TEXT_COLOR               = Color.WHITE;
+    public static final Color COMBO_REWARD_TEXT_COLOR               = new Color(0xFFE28Dff);
     public static final boolean COMBO_REWARD_TEXT_USE_SHADOW_FONT   = true;
 
 
-/**************************************************************************************************************************************************************************/
+    /**************************************************************************************************************************************************************************/
     //Play buttons in the intro screen and calendar dialog
     public static final Color INTRO_PLAY_BUTTON_TEXT_COLOR          = Color.WHITE;
     public static final boolean INTRO_PLAY_BUTTON_USE_SHADOW_FONT   = true;
@@ -162,18 +168,18 @@ public class UIConfig {
     public static final float INTRO_PLAY_BUTTON_FONT_SCALE          = 1.0f;
     public static final boolean INTRO_PLAY_BUTTON_PULSATE           = true;
 
-/**************************************************************************************************************************************************************************/
+    /**************************************************************************************************************************************************************************/
 
     //Common settings for all dialogs
     public static final float DIALOG_OPEN_DURATION                      = 0.4f;
     public static final float DIALOG_CLOSE_DURATION                     = 0.6f;
     public static final Color DIALOG_MODAL_BACKGROUND_COLOR             = new Color(0, 0, 0, 0.7f);
-    public static final Color DIALOG_TITLE_TEXT_COLOR                   = Color.WHITE;
+    public static final Color DIALOG_TITLE_TEXT_COLOR                   = Color.YELLOW;
     public static final boolean DIALOG_TITLE_TEXT_USE_SHADOW_FONT       = true;
     public static final float DIALOG_TITLE_FONT_SCALE                   = 1.0f;
-    public static final Color DIALOG_TITLE_BACKROUND_COLOR              = new Color(0xAB4372ff);
-    public static final Color DIALOG_BACKGROUND_COLOR                   = new Color(0xDFD3C1ff);
-    public static final Color DIALOG_BODY_TEXT_COLOR                    = new Color(0x6e5a3cff);
+    public static final Color DIALOG_TITLE_BACKROUND_COLOR              = new Color(0xA50000ff);
+    public static final Color DIALOG_BACKGROUND_COLOR                   = new Color(0x2F445Bff);
+    public static final Color DIALOG_BODY_TEXT_COLOR                    = new Color(0xFFD700ff);
     public static final boolean DIALOG_BODY_TEXT_USE_SHADOW_FONT        = false;
     public static final float DIALOG_BODY_TEXT_FONT_SCALE               = 0.8f;
     public static final float CONFIRM_DIALOG_BUTTON_WIDTH_COEF          = 0.4f;
@@ -201,11 +207,11 @@ public class UIConfig {
     public static final boolean MENU_ITEM_SOUND_ENABLED                 = true;
 
 
-    public static final Color MENU_ITEM_BG_COLOR                        = new Color(0xA89D8Bff);
+    public static final Color MENU_ITEM_BG_COLOR                        = new Color(0x00192Dff);
     public static final Color MENU_ITEM_TEXT_COLOR                      = Color.WHITE;
     public static final boolean MENU_ITEM_USE_SHADOW_FONT               = true;
     public static final Color MENU_DIALOG_VERSION_TEXT_COLOR            = new Color(0xA89D8Bff);
-    public static final boolean MENU_DIALOG_VERSION_USE_SHADOW_FONT     = false;
+    public static final boolean MENU_DIALOG_VERSION_USE_SHADOW_FONT     = true;
 
     //Item height multiplied by icon height
     public static final float MENU_ITEM_HEIGHT_COEF                     = 1.6f;
@@ -214,21 +220,21 @@ public class UIConfig {
     public static final float MENU_ITEM_SPACING_COEF                    = 0.1f;
 
 
-/**************************************************************************************************************************************************************************/
+    /**************************************************************************************************************************************************************************/
     //Language dialog. Color of the circle that indicates the selected language
-    public static final Color LANGUAGE_DIALOG_SELECTION_GLOW_COLOR      = new Color(0x0093AEff);
+    public static final Color LANGUAGE_DIALOG_SELECTION_GLOW_COLOR      = new Color(0xFF00192D);
 
-/**************************************************************************************************************************************************************************/
+    /**************************************************************************************************************************************************************************/
 
     //Lucky wheel
     public static final Color WHEEL_DIALOG_SPIN_BUTTON_TEXT_COLOR               = Color.WHITE;
     public static final float WHEEL_DIAL_SPIN_BUTTON_WIDTH_COEF                 = 0.9f;
     public static final boolean WHEEL_DIALOG_SPIN_BUTTON_USE_SHADOW_FONT        = true;
-    public static final float WHEEL_DIALOG_SPIN_BUTTON_FONT_SCALE               = 0.9f;
+    public static final float WHEEL_DIALOG_SPIN_BUTTON_FONT_SCALE               = 0.7f;
 
     //background
-    public static final Color WHEEL_DIALOG_BACKGROUND_COLOR                     = new Color(0xA89D8Bff);
-    public static final Color WHEEL_DIALOG_RAYS_COLOR                           = new Color(0xc0b39dff);
+    public static final Color WHEEL_DIALOG_BACKGROUND_COLOR                     = new Color(0x00192Dff);
+    public static final Color WHEEL_DIALOG_RAYS_COLOR                           = new Color(0x182E43ff);
 
     //alternating colors on dark and light slices of the wheel
     public static final Color WHEEL_DIALOG_ITEM_QUANTITY_TEXT_COLOR_DARK        = Color.BLACK;
@@ -253,25 +259,25 @@ public class UIConfig {
     //Speed of the confetti papers. pixels / frame.
     public static final float WHEEL_DIALOG_CONFETTI_VELOCITY                    = 8f;
 
-/**************************************************************************************************************************************************************************/
+    /**************************************************************************************************************************************************************************/
 
     //In app purchases
     public static final Color IAP_DIALOG_TITLE_TEXT_COLOR               = Color.WHITE;
-    public static final Color IAP_DIALOG_TITLE_BG_COLOR                 = new Color(0xcead92FF);
+    public static final Color IAP_DIALOG_TITLE_BG_COLOR                 = new Color(0x00192DFF);
 
     public static final Color IAP_DIALOG_LOADING_CIRCLE_COLOR           = new Color(0xffe9d8FF);
 
-    public static final Color IAP_ONE_TIME_OFFER_RIBBON_COLOR           = new Color(0x2cb193FF);
-    public static final Color IAP_COINS_RIBBON_COLOR                    = new Color(0x3878cfFF);
+    public static final Color IAP_ONE_TIME_OFFER_RIBBON_COLOR           = new Color(0x339933FF);
+    public static final Color IAP_COINS_RIBBON_COLOR                    = new Color(0xE61E28FF);
     public static final Color IAP_COMBO_PACK_RIBBON_COLOR               = new Color(0xcf3883FF);
-    public static final Color IAP_RIBBON_TEXT_COLOR                     = Color.WHITE;
+    public static final Color IAP_RIBBON_TEXT_COLOR                     = Color.WHITE;//new Color(0xFFD700FF);
     public static final boolean IAP_RIBBON_USE_SHADOW_FONT              = true;
 
     //items cards, both bundles and coins
-    public static final Color IAP_CARD_TITLE_TEXT_COLOR                 = new Color(0x6e5a3cff);
+    public static final Color IAP_CARD_TITLE_TEXT_COLOR                 = Color.WHITE;//new Color(0xA7957Aff);
     public static final boolean IAP_CARD_TITLE_TEXT_USE_SHADOW_FONT     = false;
-    public static final Color IAP_CARD_BG_COLOR                         = new Color(0xffeaccFF);
-    public static final Color IAP_CARD_CENTER_BG_COLOR                  = new Color(0xdfbb9eFF);
+    public static final Color IAP_CARD_BG_COLOR                         = new Color(0x2F445BFF);
+    public static final Color IAP_CARD_CENTER_BG_COLOR                  = new Color(0x00192DFF);
     public static final Color IAP_CARD_QUANTITY_TEXT_COLOR              = Color.WHITE;
     public static final boolean IAP_CARD_QUANTITY_TEXT_USE_SHADOW_FONT  = true;
 
@@ -282,18 +288,18 @@ public class UIConfig {
     public static final float IAP_COINS_BUY_BUTTON_TEXT_SCALE           = 1.0f;
     public static final float IAP_BUNDLE_BUY_BUTTON_TEXT_SCALE          = 1.2f;
 
-/**************************************************************************************************************************************************************************/
-     //Bonus words dialog, displaying the words you found but that don't exist on the board.
+    /**************************************************************************************************************************************************************************/
+    //Bonus words dialog, displaying the words you found but that don't exist on the board.
     public static final Color BWD_WORDS_TEXT_COLOR                      = new Color(0xDFD3C1ff);
     public static final Color BWD_WORDS_TITLE_COLOR                     = Color.WHITE;
-    public static final Color BWD_WORDS_BG_COLOR                        = new Color(0xa7957aFF);
+    public static final Color BWD_WORDS_BG_COLOR                        = new Color(0x2F445Bff);
     public static final Color BWD_BADGE_TEXT_COLOR                      = new Color(0xeaeaeaFF);
 
     //Background color when user earns reward. It should be dark because there are sparkles to be seen
-    public static final Color BWD_DIALOG_REWARD_MODE_BG_COLOR           = new Color(0xb7aea1ff);
+    public static final Color BWD_DIALOG_REWARD_MODE_BG_COLOR           = new Color(0x2F445Bff);
     public static final Color BWD_DIALOG_REWARD_MODE_BODY_TEXT_COLOR    = Color.WHITE;
 
-/**************************************************************************************************************************************************************************/
+    /**************************************************************************************************************************************************************************/
     //Remove ads dialog appears after an interstitial ad
     public static final Color REMOVE_ADS_DIALOG_COST_TEXT_COLOR                     = Color.WHITE;
     public static final boolean REMOVE_ADS_DIALOG_COST_TEXT_USE_SHADOW_FONT         = false;
@@ -302,23 +308,23 @@ public class UIConfig {
     public static final float REMOVE_ADS_DIALOG_BUY_BUTTON_WIDTH_COEF               = 0.7f;
     public static final float REMOVE_ADS_DIALOG_BUY_BUTTON_FONT_SCALE               = 1f;
 
-/************************************************************************************************************************************************************************/
+    /************************************************************************************************************************************************************************/
     //Watch and earn dialog appears when the player closes the IAP dialog without making a purchase
     public static final float WATCH_AND_EARN_DIALOG_BUTTON_WIDTH_COEF   = 0.8f;
     public static final float WATCH_AND_EARN_DIALOG_BUTTON_FONT_SCALE   = 1f;
 
-/**************************************************************************************************************************************************************************/
+    /**************************************************************************************************************************************************************************/
     //The dictionary appears after clicking a completed word on the grid or on tapping the dictionary button at level end.
-    public static final Color DICTIONARY_DIALOG_CENTER_BG_COLOR                 = new Color(0xA89D8BFF);
+    public static final Color DICTIONARY_DIALOG_CENTER_BG_COLOR                 = new Color(0x00192DFF);
     public static final Color DICTIONARY_DIALOG_LOADING_CIRCLE_COLOR            = new Color(0xDFD3C1ff);
-    public static final Color DICTIONARY_DIALOG_NAVIGATION_ARROW_COLOR          = new Color(0x66563DFF);
-    public static final Color DICTIONARY_DIALOG_WORD_TEXT_COLOR                 = new Color(0x402E32ff);
+    public static final Color DICTIONARY_DIALOG_NAVIGATION_ARROW_COLOR          = new Color(0x00192DFF);
+    public static final Color DICTIONARY_DIALOG_WORD_TEXT_COLOR                 = new Color(0xFFD700ff);
     public static final float DICTIONARY_DIALOG_WORD_TEXT_SCALE                 = 1.2f;
     public static final boolean DICTIONARY_DIALOG_WORD_TEXT_USE_SHADOW_FONT     = false;
     public static final Color DICTIONARY_DIALOG_MEANING_TEXT_COLOR              = Color.WHITE;
     public static final boolean DICTIONARY_DIALOG_MEANING_TEXT_USE_SHADOW_FONT  = true;
 
-/**************************************************************************************************************************************************************************/
+    /**************************************************************************************************************************************************************************/
     //At the end of levels
 
     //particles that are emitted behind the cup view
@@ -338,17 +344,17 @@ public class UIConfig {
     public static final float LEVEL_END_VIEW_NEXT_LEVEL_BUTTON_FONT_SCALE               = 1f;
     public static final boolean LEVEL_END_VIEW_NEXT_LEVEL_BUTTON_USE_SHADOW_FONT        = true;
 
-/**************************************************************************************************************************************************************************/
+    /**************************************************************************************************************************************************************************/
     //Coin animation that appears after watching a rewarded video. It shows the number of coins earned.
     public static final Color COIN_ANIM_TEXT_COLOR  = new Color(0x7fd645ff);
     public static final float COIN_ANIM_DURATION    = 0.8f;
 
-/**************************************************************************************************************************************************************************/
+    /**************************************************************************************************************************************************************************/
     //Preview is the component that shows the letters formed as the player drags his/her finger over the letter buttons of the dial.
     public static final Color PREVIEW_TEXT_COLOR        = Color.WHITE;
     public static final float PREVIEW_FONT_SCALE        = 0.7f;
 
-/**************************************************************************************************************************************************************************/
+    /**************************************************************************************************************************************************************************/
     //Game related
 
     //when a tile is solved
@@ -371,14 +377,14 @@ public class UIConfig {
      * regardless of the level index.
      */
     public static Color getTileBackgroundUnsolvedColorByLevelIndex(int levelIndex){
-        return new Color(0xffffffb3);
+        return new Color(0xffffcccc);
     }
 
 
 
     //Customize dial background color depending on the level
     public static Color getDialBackgroundColorByLevelIndex(int levelIndex){
-        return new Color(0xffffffb3);
+        return new Color(0xffffffff);
     }
 
     //Customize the dial button text up color depending on the level
@@ -506,16 +512,25 @@ public class UIConfig {
      */
     public static final Color[] levelColors = {
             Color.ROYAL,
+            new Color(0x750027ff),
             Color.FOREST,
-            Color.ORANGE,
-            Color.FIREBRICK,
+            new Color(0x131e3aff),// Color.ORANGE, FF9900
+            new Color(0x800020ff),
             Color.SCARLET,
-            Color.VIOLET,
-            Color.GRAY,
+            new Color(0x003151ff),
             Color.TEAL,
+            new Color(0x043927ff),
             Color.OLIVE,
-            Color.BROWN,
-            Color.PINK
+            new Color(0x311432ff),
+            Color.PURPLE,
+            new Color(0xbf0a30ff),
+            new Color(0xFF9900ff),
+            new Color(0xAB0032ff),
+            new Color(0x00AB79ff),
+            new Color(0x003333ff),
+            new Color(0x330033ff),
+            new Color(0x003300ff),
+            new Color(0x660000ff),
     };
 
 
@@ -554,7 +569,7 @@ public class UIConfig {
 
 
 
-/**************************************************************************************************************************************************************************/
+    /**************************************************************************************************************************************************************************/
     //Reveal hint buttons
 
     //cost text appears  when the quantity of reveal hints is 0.
@@ -585,7 +600,7 @@ public class UIConfig {
     public static final Color TOOLTIP_TEXT_COLOR                = Color.WHITE;
     public static final boolean TOOLTIP_TEXT_USE_SHADOW_FONT    = false;
 
-/**************************************************************************************************************************************************************************/
+    /**************************************************************************************************************************************************************************/
 
     //Game screen margins
 

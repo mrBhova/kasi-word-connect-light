@@ -8,7 +8,7 @@ import word.game.model.CellModel;
 public class CellModelPool extends Pool<CellModel> {
 
     public CellModelPool(){
-        super(9, 50, true);
+        super(9, 50);
     }
 
 

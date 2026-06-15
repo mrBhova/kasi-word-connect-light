@@ -3,7 +3,7 @@ package word.game;
 import com.badlogic.gdx.Application;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Net;
-import com.badlogic.gdx.utils.StringBuilder;
+import java.lang.StringBuilder;
 
 
 

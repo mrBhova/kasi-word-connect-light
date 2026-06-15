@@ -1,39 +1,39 @@
 {
   "project_info": {
-    "project_number": "304361454359",
-    "firebase_url": "https://wordconnect-rt4g5.firebaseio.com",
-    "project_id": "wordconnect-rt4g5",
-    "storage_bucket": "wordconnect-rt4g5.appspot.com"
+    "project_number": "688497375163",
+    "project_id": "mzansi-word-connect",
+    "storage_bucket": "mzansi-word-connect.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:304361454359:android:2a4924690rbn157b704h2a",
+        "mobilesdk_app_id": "1:688497375163:android:38cd41e3eee37b5d04369e",
         "android_client_info": {
-          "package_name": "net.codecanyon.yourcodecanyonusername.android.worderful"
+          "package_name": "net.singomedia.bovagames.mzansiwordconnect"
         }
       },
       "oauth_client": [
         {
-          "client_id": "304361454359-4o2ag5eou7ck2p1b74sdvdj67ie4lqv5.apps.googleusercontent.com",
+          "client_id": "688497375163-fm44h9q8tcre0p377f6q6itr8cgbi76d.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "TYzcSyR-2tsCtqKSUNPoqo6pqHP2BLr7om-T0n1"
+          "current_key": "AIzaSyBuQYFPJlqAMrRw4ozbXNetq7stl1YLCA4"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "304361454359-4o2ag5eou7ck2p1b74sdvdj67ie4lqv5.apps.googleusercontent.com",
+              "client_id": "688497375163-fm44h9q8tcre0p377f6q6itr8cgbi76d.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
         }
-      }
+      },
+      "admob_app_id": "ca-app-pub-4596902508539197~9244123564"
     }
   ],
   "configuration_version": "1"

@@ -1,21 +1,21 @@
 
 atlas2_hd.png
-size: 2048,1024
+size: 2048, 512
 format: RGBA8888
-filter: Linear,Linear
+filter: Linear, Linear
 repeat: none
 board_cell
   rotate: false
-  xy: 2007, 981
-  size: 30, 30
-  split: 12, 12, 11, 12
+  xy: 591, 2
+  size: 32, 31
+  split: 12, 13, 13, 13
   pad: 0, 0, 0, 0
-  orig: 30, 30
+  orig: 32, 31
   offset: 0, 0
   index: -1
 board_cell_solved
   rotate: false
-  xy: 1787, 886
+  xy: 625, 18
   size: 15, 15
   split: 5, 5, 5, 5
   pad: 0, 0, 0, 0
@@ -24,114 +24,114 @@ board_cell_solved
   index: -1
 box_rays
   rotate: false
-  xy: 916, 723
+  xy: 1354, 221
   size: 288, 288
   orig: 288, 288
   offset: 0, 0
   index: -1
 btn_dictionary_down
   rotate: false
-  xy: 1303, 709
+  xy: 941, 2
   size: 95, 95
   orig: 95, 95
   offset: 0, 0
   index: -1
 btn_dictionary_up
   rotate: false
-  xy: 1206, 709
+  xy: 1038, 2
   size: 95, 95
   orig: 95, 95
   offset: 0, 0
   index: -1
 cup
   rotate: false
-  xy: 1206, 806
+  xy: 1581, 14
   size: 300, 205
   orig: 300, 205
   offset: 0, 0
   index: -1
 dial
   rotate: false
-  xy: 504, 601
-  size: 410, 410
-  orig: 410, 410
+  xy: 941, 99
+  size: 411, 410
+  orig: 411, 410
   offset: 0, 0
   index: -1
 dial_button
   rotate: false
-  xy: 1508, 861
+  xy: 1883, 359
   size: 150, 150
   orig: 150, 150
   offset: 0, 0
   index: -1
 disc_particle
   rotate: false
-  xy: 438, 307
+  xy: 1971, 115
   size: 62, 62
   orig: 62, 62
   offset: 0, 0
   index: -1
 extra_words_down
   rotate: false
-  xy: 834, 514
-  size: 85, 85
-  orig: 85, 85
+  xy: 1311, 12
+  size: 86, 85
+  orig: 86, 85
   offset: 0, 0
   index: -1
 extra_words_up
   rotate: false
-  xy: 1400, 719
-  size: 85, 85
-  orig: 85, 85
+  xy: 1135, 12
+  size: 86, 85
+  orig: 86, 85
   offset: 0, 0
   index: -1
 finger_hint_down
   rotate: false
-  xy: 1787, 903
+  xy: 1644, 401
   size: 108, 108
   orig: 108, 108
   offset: 0, 0
   index: -1
 finger_hint_up
   rotate: false
-  xy: 504, 491
+  xy: 1881, 249
   size: 108, 108
   orig: 108, 108
   offset: 0, 0
   index: -1
 hint_btn_cost_bg
   rotate: false
-  xy: 2, 2
+  xy: 505, 2
   size: 84, 31
   split: 31, 31, 10, 10
   pad: 0, 0, 0, 0
   orig: 84, 31
   offset: 0, 0
   index: -1
-hint_empty_down
+hint_empty_up
   rotate: false
-  xy: 1897, 903
+  xy: 1771, 401
   size: 108, 108
   orig: 108, 108
   offset: 0, 0
   index: -1
-hint_empty_up
+hint_empty_down
   rotate: false
-  xy: 1033, 613
+  xy: 1771, 401
   size: 108, 108
   orig: 108, 108
   offset: 0, 0
   index: -1
 lucky_wheel
   rotate: false
-  xy: 2, 511
-  size: 500, 500
-  orig: 500, 500
+  xy: 2, 9
+  size: 501, 500
+  orig: 501, 500
   offset: 0, 0
   index: -1
 preview
   rotate: false
-  xy: 438, 441
+  xy: 1971, 179
   size: 62, 68
   split: 30, 29, 23, 23
   pad: 0, 0, 0, 0
@@ -140,84 +140,84 @@ preview
   index: -1
 random_hint_multi_down
   rotate: false
-  xy: 1595, 774
-  size: 85, 85
-  orig: 85, 85
+  xy: 1399, 17
+  size: 86, 85
+  orig: 86, 85
   offset: 0, 0
   index: -1
 random_hint_multi_up
   rotate: false
-  xy: 1508, 774
-  size: 85, 85
-  orig: 85, 85
+  xy: 1223, 12
+  size: 86, 85
+  orig: 86, 85
   offset: 0, 0
   index: -1
 rewarded_video_down
   rotate: false
-  xy: 1682, 799
-  size: 85, 85
-  orig: 85, 85
+  xy: 1883, 162
+  size: 86, 85
+  orig: 86, 85
   offset: 0, 0
   index: -1
 rewarded_video_up
   rotate: false
-  xy: 921, 519
-  size: 85, 85
-  orig: 85, 85
+  xy: 1487, 24
+  size: 86, 85
+  orig: 86, 85
   offset: 0, 0
   index: -1
 rocket_coin
   rotate: false
-  xy: 916, 606
+  xy: 1354, 104
   size: 115, 115
   orig: 115, 115
   offset: 0, 0
   index: -1
 shuffle_down
   rotate: false
-  xy: 614, 491
+  xy: 1771, 291
   size: 108, 108
   orig: 108, 108
   offset: 0, 0
   index: -1
 shuffle_up
   rotate: false
-  xy: 724, 491
+  xy: 1471, 111
   size: 108, 108
   orig: 108, 108
   offset: 0, 0
   index: -1
 smoke
   rotate: false
-  xy: 2, 59
+  xy: 505, 59
   size: 434, 450
   orig: 434, 450
   offset: 0, 0
   index: -1
 star_particle
   rotate: false
-  xy: 438, 371
+  xy: 1771, 221
   size: 67, 68
   orig: 67, 68
   offset: 0, 0
   index: -1
 stripe_particle
   rotate: false
-  xy: 2, 35
+  xy: 505, 35
   size: 142, 22
   orig: 142, 22
   offset: 0, 0
   index: -1
 wave
   rotate: false
-  xy: 1143, 662
+  xy: 1883, 101
   size: 59, 59
   orig: 59, 59
   offset: 0, 0
   index: -1
 wave_badge
   rotate: false
-  xy: 1660, 886
+  xy: 1644, 232
   size: 125, 125
   orig: 125, 125
   offset: 0, 0

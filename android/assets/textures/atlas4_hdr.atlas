@@ -1,12 +1,12 @@
 
 atlas4_hdr.png
-size: 2048,1024
+size: 2048, 1024
 format: RGBA8888
-filter: Linear,Linear
+filter: Linear, Linear
 repeat: none
 coins1
   rotate: false
-  xy: 1296, 809
+  xy: 1297, 809
   size: 150, 123
   orig: 150, 123
   offset: 0, 0
@@ -48,9 +48,9 @@ coins6
   index: -1
 en
   rotate: false
-  xy: 1115, 823
-  size: 179, 179
-  orig: 179, 179
+  xy: 1115, 822
+  size: 180, 180
+  orig: 180, 180
   offset: 0, 0
   index: -1
 gold_pack
@@ -62,14 +62,14 @@ gold_pack
   index: -1
 level_clear_en
   rotate: false
-  xy: 1296, 934
+  xy: 1297, 934
   size: 297, 35
   orig: 297, 35
   offset: 0, 0
   index: -1
 level_clear_tr
   rotate: false
-  xy: 1296, 971
+  xy: 1297, 971
   size: 304, 31
   orig: 304, 31
   offset: 0, 0
