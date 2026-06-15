@@ -33,6 +33,8 @@ import word.game.net.WordMeaningProvider;
 import word.game.net.WordMeaningRequest;
 import word.game.screens.BaseScreen;
 
+import java.util.Locale;
+
 
 public class DictionaryDialog extends BaseDialog {
 
@@ -329,7 +331,7 @@ public class DictionaryDialog extends BaseDialog {
         float panelWidth = group.getWidth() * 0.9f;
         float paneHeight = group.getHeight() * 0.85f;
 
-        if(meaning.equals("Your search did not return any results")){
+        if(meaning.equals("Your search did not return any results") || meaning.toLowerCase(Locale.ENGLISH).contains("no definitions")){
             meaning = LanguageManager.get("word_not_found");
         }
 

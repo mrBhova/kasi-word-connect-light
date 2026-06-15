@@ -2,15 +2,8 @@ package word.game.desktop;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Net;
-import com.badlogic.gdx.utils.StringBuilder;
-
-
-
-
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
+import com.badlogic.gdx.utils.JsonReader;
+import com.badlogic.gdx.utils.JsonValue;
 
 import java.util.Locale;
 
@@ -19,7 +12,7 @@ import word.game.ui.dialogs.DictionaryDialog;
 
 public class WordMeaningRequest_en implements WordMeaningRequest {
 
-    private  DictionaryDialog.DictionaryCallback callback;
+    private DictionaryDialog.DictionaryCallback callback;
     private String word;
 
     @Override
@@ -27,44 +20,16 @@ public class WordMeaningRequest_en implements WordMeaningRequest {
         this.word = word;
         this.callback = callback;
 
+        Net.HttpRequest request = new Net.HttpRequest(Net.HttpMethods.GET);
+        request.setUrl("https://api.dictionaryapi.dev/api/v2/entries/en/" + word.toLowerCase(Locale.ENGLISH));
 
-        StringBuilder sb = new StringBuilder();
-        sb.append("s=" + word);
-        sb.append("&o8=1");
-        sb.append("&o1=1");
-        sb.append("&h=000000000000000");
-        sb.append("&sub=Search WordNet");
-        sb.append("&o2=");
-        sb.append("&o0=");
-        sb.append("&o7=");
-        sb.append("&o5=");
-        sb.append("&o9=");
-        sb.append("&o6=");
-        sb.append("&o3=");
-        sb.append("&o4=");
-        sb.append("&c=-1");
-
-
-        Net.HttpRequest request = new Net.HttpRequest(Net.HttpMethods.POST);
-        request.setUrl("http://wordnetweb.princeton.edu/perl/webwn");
-        request.setContent(sb.toString());
-
-        request.setHeader("Content-Type", "application/x-www-form-urlencoded");
-        request.setHeader("Host", "wordnetweb.princeton.edu");
-        request.setHeader("Referer", "http://wordnetweb.princeton.edu/perl/webwn");
-        request.setHeader("Cookie", "_ga=GA1.2.1612812547.1582833968");
-        request.setHeader("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36");
-        request.setHeader("Upgrade-Insecure-Requests", "1");
-        request.setHeader("Connection", "keep-alive");
-        request.setHeader("Accept-Language", "en,tr-TR;q=0.9,tr;q=0.8,en-US;q=0.7,es;q=0.6,ru;q=0.5,fr;q=0.4,pt;q=0.3,de;q=0.2,it;q=0.1");
-        request.setHeader("Accept-Encoding", "gzip, deflate");
-        request.setHeader("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9");
-
+        request.setHeader("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36");
+        request.setHeader("Accept", "application/json");
+        request.setTimeOut(10000);
 
         RequestSender sender = new RequestSender();
         sender.request = request;
         sender.run();
-
     }
 
 
@@ -79,7 +44,6 @@ public class WordMeaningRequest_en implements WordMeaningRequest {
                 public void handleHttpResponse(final Net.HttpResponse httpResponse) {
 
                     final String response = parseResponse(httpResponse.getResultAsString());
-                    //parseResponse(response);
                     Gdx.app.postRunnable(new Runnable() {
                         @Override
                         public void run() {
@@ -108,42 +72,78 @@ public class WordMeaningRequest_en implements WordMeaningRequest {
         }
 
 
+        private String parseResponse(String json){
+            if(json == null || json.isEmpty()) return "";
 
+            try {
+                JsonReader reader = new JsonReader();
+                JsonValue root = reader.parse(json);
 
-        private String parseResponse(String html){
-
-            if(html.contains("Your search did not return any results")){
-                return "Your search did not return any results";
-            }
-
-
-            Document doc = Jsoup.parse(html);
-
-            Elements h3 = doc.select("h3");
-            Elements uls = doc.select("ul");
-
-            StringBuilder sb = new StringBuilder();
-
-            for(int i = 0; i < h3.size(); i++){
-                if(i > 0) sb.append("\n\n");
-                sb.append(h3.get(i).text().toUpperCase(Locale.ENGLISH));
-
-
-
-                Element ul = uls.get(i);
-                Elements li = ul.select("li");
-                for(int j = 0; j < li.size(); j++){
-                    //sb.append(j == 0 ? "\n\n" : "\n");
-                    String text = li.get(j).text().replaceFirst("S:", "*");
-                    sb.append("\n\n" + text);
-                    /*if(j < li.size() - 1)*/
-
+                // Check if it's an error response (not found)
+                if (root.isObject() && root.has("title")) {
+                    String title = root.getString("title", "");
+                    if (title.toLowerCase(Locale.ENGLISH).contains("no definitions")) {
+                        return "Your search did not return any results";
+                    }
                 }
+
+                StringBuilder sb = new StringBuilder();
+
+                // root is a JSON array of entries
+                for (JsonValue entry = root.child; entry != null; entry = entry.next) {
+                    String word = entry.getString("word", "");
+                    if (!word.isEmpty()) {
+                        sb.append(word.toUpperCase(Locale.ENGLISH));
+                        String phonetic = entry.getString("phonetic", "");
+                        if (!phonetic.isEmpty()) {
+                            sb.append("  ").append(phonetic);
+                        }
+                        sb.append("\n");
+                    }
+
+                    JsonValue meanings = entry.get("meanings");
+                    if (meanings != null) {
+                        for (JsonValue meaning = meanings.child; meaning != null; meaning = meaning.next) {
+                            String partOfSpeech = meaning.getString("partOfSpeech", "");
+
+                            JsonValue definitions = meaning.get("definitions");
+                            if (definitions != null) {
+                                for (JsonValue def = definitions.child; def != null; def = def.next) {
+                                    String definition = def.getString("definition", "");
+
+                                    sb.append("  ● ");
+                                    if (!partOfSpeech.isEmpty()) {
+                                        sb.append("(").append(partOfSpeech).append(") ");
+                                    }
+                                    sb.append(definition).append("\n");
+
+                                    String example = def.getString("example", "");
+                                    if (!example.isEmpty()) {
+                                        sb.append("    \"").append(example).append("\"\n");
+                                    }
+                                }
+                            }
+
+                            JsonValue synonyms = meaning.get("synonyms");
+                            if (synonyms != null && synonyms.child != null) {
+                                sb.append("    Synonyms: ");
+                                int count = 0;
+                                for (JsonValue syn = synonyms.child; syn != null && count < 5; syn = syn.next) {
+                                    if (count > 0) sb.append(", ");
+                                    sb.append(syn.asString());
+                                    count++;
+                                }
+                                sb.append("\n");
+                            }
+                        }
+                    }
+                }
+
+                return sb.length() > 0 ? sb.toString() : "";
+            } catch (Exception e) {
+                Gdx.app.log("dictionary", "parse error: " + e.getMessage());
+                return "";
             }
-
-
-
-            return sb.toString();
         }
     }
 
